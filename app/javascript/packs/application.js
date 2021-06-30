@@ -17,5 +17,11 @@ Turbolinks.start();
 ActiveStorage.start();
 
 $(document).on("turbolinks:load", function () {
+  // Makes the dropdown items work
   $(".ui.dropdown").dropdown();
+
+  // Makes the flash messages work
+  $(".message .close").on("click", function () {
+    $(this).closest(".message").transition("fade");
+  });
 });
